@@ -12,6 +12,7 @@ namespace Service.DTOs.Product
         public string? Name { get; set; }
         public decimal Price { get; set; }
         public int Count { get; set; }
+        public byte[] Image { get; set; }
         public DateTime CreatedDate { get; set; }
     }
 }

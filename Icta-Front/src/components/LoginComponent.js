@@ -2,11 +2,17 @@ import React, { useState } from "react";
 import axios from "axios";
 import Swal from "sweetalert2";
 import "../../src/assets/css/login-register.css"
-import { useNavigate } from "react-router-dom";
+import { Route, useNavigate } from "react-router-dom";
 import FooterComponent from "./FooterComponent";
 import Navbar from "./Navbar";
 
 function LoginComponent() {
+<Route>
+  
+</Route>
+
+
+
   const navigate = useNavigate();
 
   const url = "https://localhost:7139";

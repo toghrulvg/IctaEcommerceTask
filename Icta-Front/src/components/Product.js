@@ -104,10 +104,10 @@ function Product() {
                 <div className="product" >
               <div className="product-image" product-id={1}>
                 <a href="product-detail.html" className="image">
-                  <img
-                    src="/images/home/products/acs-1.jpg"
-                    className="img-1"
-                  />
+                <img
+                      src={`data:image/jpeg;base64,${product.image}`}
+                      alt=""
+                    />
                   <img
                     src="/images/home/products/acs-1.jpg"
                     className="img-2"

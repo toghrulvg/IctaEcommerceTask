@@ -537,12 +537,7 @@
     overflow: hidden;
     position: relative;
   }
-  #products .product .product-image:hover .image .img-1 {
-    opacity: 0;
-  }
-  #products .product .product-image:hover .image .img-2 {
-    opacity: 1;
-  }
+  
   #products .product .product-image:hover .cart {
     opacity: 1;
   }
@@ -550,8 +545,8 @@
     display: block;
   }
   #products .product .product-image .image img {
-    width: 100%;
-    height: 417.01px;
+    width: 80%;
+    height: 380px;
   }
   #products .product .product-image .image .img-1 {
     transition: 0.5s;

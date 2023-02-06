@@ -86,7 +86,7 @@ namespace Repository.Repositories
                 .ThenInclude(m => m.Product)
                 .FirstOrDefaultAsync(m => m.AppUserId == userId);
 
-            var basketProducts = basket.BasketProducts;
+           var basketProducts = basket.BasketProducts;
 
             return basketProducts;
         }

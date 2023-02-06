@@ -12,6 +12,7 @@ import FooterComponent from './components/FooterComponent';
 import LoginComponent from './components/LoginComponent';
 import RegisterComponent from './components/RegisterComponent';
 import Protection from "./components/Protection";
+import Basket from './components/Basket';
 
 
 function App() {
@@ -20,9 +21,12 @@ function App() {
 
     <div>
 
+
       <Routes>
         <Route exact path="/" element={<Product />} />
         <Route exact path="/login" element={<LoginComponent/>} />
+        <Route exact path="/register" element={<RegisterComponent/>} />
+        <Route exact path="/basket" element={<Basket />} />
        
 
 

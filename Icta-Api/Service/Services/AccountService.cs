@@ -61,6 +61,8 @@ namespace Service.Services
                 };
                 return response;
             }
+
+
             var dbUser = await _userManager.FindByEmailAsync(model.Email);
 
             await _userManager.AddToRoleAsync(dbUser, "Member");

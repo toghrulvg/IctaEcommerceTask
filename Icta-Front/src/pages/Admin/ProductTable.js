@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
 import axios from "axios";
+import ProductCreate from "./ProductCreate";
+import ReactPaginate from "react-paginate";
 
 function ProductTable() {
   const url = "https://localhost:7139";
@@ -29,15 +31,7 @@ function ProductTable() {
   };
 
 
-  async function GetProducts() {
-    await axios.get(`${url}/api/Product/GetAll`).then((res) => {
-      setProducts(res.data);
-     
-    });
-  }
-  useEffect(() => {
-    GetProducts();
-  }, []);
+
 
 
   //sweet alert
@@ -74,6 +68,7 @@ function ProductTable() {
       //     title: "Welcome, you can manage products here!",
       //   });
       // }
+      console.log(res.data);
     });
   }
 
@@ -121,6 +116,7 @@ function ProductTable() {
           <div className="card-body">
             <h4 className="card-title d-flex justify-content-between">
               Products
+              <ProductCreate/>
             </h4>
             <table className="table table-striped">
               <thead>
@@ -172,6 +168,21 @@ function ProductTable() {
                 ))}
               </tbody>
             </table>
+            <ReactPaginate
+              breakLabel="..."
+              nextLabel="next>"
+              onPageChange={handlePageClick}
+              marginPagesDisplayed={0}
+              pageRangeDisplayed={3}
+              pageCount={pageCount}
+              previousLabel="<previous"
+              renderOnZeroPageCount={null}
+              containerClassName="pagination"
+              pageLinkClassName="page-num"
+              previousClassName="page-num"
+              nextLinkClassName="page-num"
+              activeLinkClassName="active"
+            />
             
           </div>
         </div>
