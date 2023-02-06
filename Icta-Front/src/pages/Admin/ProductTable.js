@@ -13,7 +13,7 @@ function ProductTable() {
   const [currentItems, setCurrentItems] = useState([]);
   const [pageCount, setPageCount] = useState(0);
   const [itemOffset, setItemOffset] = useState(0);
-  const itemsPerPage = 6;
+  const itemsPerPage = 100;
   const [currentPage, setCurrentPage] = useState(1);
 
   let rowNumber = (currentPage - 1) * itemsPerPage;
@@ -103,7 +103,7 @@ function ProductTable() {
           icon: "error",
           title: "Oops...",
           text: "Something went wrong!",
-          footer: '<a href="">Why do I have this issue?</a>',
+          footer: '<a>Why do I have this issue?</a>',
         });
         console.log(error);
       });
@@ -111,12 +111,15 @@ function ProductTable() {
 
   return (
     <div>
+
+      <Link to={`/ProductCreate/`}>
+        <button className="btn btn-success">Create</button>
+      </Link>
       <div className="col-lg-12 grid-margin stretch-card">
         <div className="card">
           <div className="card-body">
             <h4 className="card-title d-flex justify-content-between">
               Products
-              <ProductCreate/>
             </h4>
             <table className="table table-striped">
               <thead>
@@ -168,22 +171,8 @@ function ProductTable() {
                 ))}
               </tbody>
             </table>
-            <ReactPaginate
-              breakLabel="..."
-              nextLabel="next>"
-              onPageChange={handlePageClick}
-              marginPagesDisplayed={0}
-              pageRangeDisplayed={3}
-              pageCount={pageCount}
-              previousLabel="<previous"
-              renderOnZeroPageCount={null}
-              containerClassName="pagination"
-              pageLinkClassName="page-num"
-              previousClassName="page-num"
-              nextLinkClassName="page-num"
-              activeLinkClassName="active"
-            />
             
+
           </div>
         </div>
       </div>

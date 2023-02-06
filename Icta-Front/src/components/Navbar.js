@@ -35,7 +35,7 @@ function Navbar() {
               <div className="col-12">
                 <nav className="navbar navbar-expand-lg navbar-light">
                   <div className="logo">
-                    <a href="home.html">
+                    <a>
                       <img src="/images/home/logo.png" alt="" />
                     </a>
                   </div>
@@ -59,7 +59,6 @@ function Navbar() {
                         <Link to={"/"}
                           className="nav-link active"
                           aria-current="page"
-                          href="home.html"
                         >
                           Home
                         </Link>
@@ -105,42 +104,28 @@ function Navbar() {
                           name=""
                           placeholder="Search"
                         />
-                        <a className="search-btn" href="#">
+                        <a className="search-btn" >
                           <i className="fas fa-search" />
                         </a>
                       </div>
                     </form>
                     <div className="basket">
                       <Link to={"/basket"}>
-
                         <i className="fa-solid fa-basket-shopping">
-                          <sup>0</sup>
                         </i>
-
                       </Link>
                     </div>
 
                     <div className="account">
-
-
-
                       {currentToken == null ? (
-
                         <Link to={"/login"} className="nav-link" >
                           Login
                         </Link>
                       ) : (
-
-                        <a onClick={handleLogout} href="#" className="log-out">
+                        <a onClick={handleLogout}  className="log-out">
                           <i className="fa-solid fa-right-from-bracket" />
                         </a>
                       )}
-
-                      
-
-
-
-
                     </div>
                   </div>
                 </nav>

@@ -14,7 +14,7 @@ function
                 <span>Assos</span>
                 <h1>New Collection</h1>
                 <button>
-                  <a href="shop.html">Shop Now</a>
+                  <a >Shop Now</a>
                 </button>
               </div>
             </div>

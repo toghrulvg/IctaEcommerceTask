@@ -2,22 +2,16 @@ import React, { useState } from "react";
 import axios from "axios";
 import Swal from "sweetalert2";
 import "../../src/assets/css/login-register.css"
-import { Route, useNavigate } from "react-router-dom";
+import {Link, Route, useNavigate } from "react-router-dom";
 import FooterComponent from "./FooterComponent";
 import Navbar from "./Navbar";
 
 function LoginComponent() {
-<Route>
-  
-</Route>
-
-
 
   const navigate = useNavigate();
 
   const url = "https://localhost:7139";
 
-  //Prop for Api End
   const [email, setEmail] = useState();
   const [logpassword, setLogpassword] = useState();
 
@@ -82,19 +76,21 @@ function LoginComponent() {
                   <img
                     style={{ width: 390, height: 500 }}
                     src="/images/login-register/login.jpg"
-                    alt=""
+                    
                   />
                 </div>
                 <div className="login-form">
                   <form onSubmit={(e) => login(e)}>
-                    <h2>Sign In</h2>
+                  <h1>Login</h1>
                     <input type="text" placeholder="Email"
                     onChange={(e) => setEmail(e.target.value)} />
                     <input type="password" placeholder="Password" 
                     onChange={(e) => setLogpassword(e.target.value)}/>
                     <input type="submit" defaultValue="Login" />
                     <p className="sign-up">
-                      Don't have an account?<a href="register.html">Sign Up</a>
+                      Don't have an account?<Link to={"/register"}  >
+                          Sign UP
+                        </Link>
                     </p>
                   </form>
                 </div>

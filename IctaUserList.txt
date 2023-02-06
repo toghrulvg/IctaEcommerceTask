@@ -1,0 +1,8 @@
+Admin:
+Email - Admin@mail.ru
+Password - Cavid123_
+
+Member1:
+
+Email - Member@mail.ru
+Password - Cavid123_

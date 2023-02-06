@@ -4,6 +4,9 @@ import axios from "axios";
 import Swal from "sweetalert2";
 import "../../src/assets/css/home.css"
 import Navbar from "./Navbar";
+import Category from "./Category";
+import Banner from "./Banner";
+import FooterComponent from "./FooterComponent";
 
 
 function Product() {
@@ -67,7 +70,7 @@ function Product() {
             icon: "success",
             title: "Product successfully added to basket",
           });
-        }console.log(res);
+        } console.log(res);
       })
       .catch((err) => {
         if (err.response.status === 401 || err.response.data.status === 401) {
@@ -87,68 +90,68 @@ function Product() {
 
   return (
     <div>
-      <Navbar/>
-    <section id="products">
-  <div className="container">
-    <div className="row">
-      <div className="col-12">
-        <div className="product-header">
-          <h2>Popular Products</h2>
+      <Navbar />
+      <Banner />
+      <Category />
+      <section id="products">
+        <div className="container">
+          <div className="row">
+            <div className="col-12">
+              <div className="product-header">
+                <h2>Popular Products</h2>
+              </div>
+            </div>
+            {/* <div id="product-slider" className="owl-carousel"> */}
+
+            {products.map((product, key) => {
+              return (
+                <div className="col-lg-3 col-md-6 col-sm-12" key={key}>
+                  <div className="product" >
+                    <div className="product-image" product-id={1}>
+                      <a className="image">
+                        <img
+                          src={`data:image/jpeg;base64,${product.image}`}
+                          alt=""
+                        />
+                        <img
+                          src="/images/home/products/acs-1.jpg"
+                          className="img-2"
+                        />
+                      </a>
+                      <span className="discount">Sale</span>
+                      <button className="cart" onClick={() => AddBasket(product.id)}>
+                        Add to Cart
+                      </button>
+                      <div className="links">
+                        <ul>
+                          <li>
+
+                          </li>
+                        </ul>
+                      </div>
+                      <div className="content">
+                        <h3 className="title">
+                          <a >{product.name}</a>
+                        </h3>
+                        <div className="price">${product.price}</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>)
+
+            })}
+
+
+
+            {/* </div> */}
+          </div>
+
         </div>
-      </div>
-      {/* <div id="product-slider" className="owl-carousel"> */}
-        
-          {products.map((product, key) =>{
-            return( 
-              <div className="col-lg-3 col-md-6 col-sm-12"key={key}>
-                <div className="product" >
-              <div className="product-image" product-id={1}>
-                <a href="product-detail.html" className="image">
-                <img
-                      src={`data:image/jpeg;base64,${product.image}`}
-                      alt=""
-                    />
-                  <img
-                    src="/images/home/products/acs-1.jpg"
-                    className="img-2"
-                  />
-                </a>
-                <span className="discount">Sale</span>
-                <button className="cart" onClick={() => AddBasket(product.id)}>
-                  Add to Cart
-                </button>
-                <div className="links">
-                  <ul>
-                    <li>
-                      
-                    </li>
-                  </ul>
-                </div>
-                <div className="content">
-                  <span className="category">
-                    <a href="">Pull &amp; Bear</a>
-                  </span>
-                  <h3 className="title">
-                    <a href="">{product.name}</a>
-                  </h3>
-                  <div className="price">${product.price}</div>
-                </div>
-              </div>
-              </div>
-            </div>)
-             
-          })}
-          
-        
-        
-      {/* </div> */}
+      </section>
+      <FooterComponent />
+
     </div>
-  </div>
-</section>
 
-
-  </div>
-  
   )
 }
 

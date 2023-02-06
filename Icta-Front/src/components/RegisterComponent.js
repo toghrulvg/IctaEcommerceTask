@@ -1,9 +1,10 @@
-import React, { useState } from "react";
+import React, { useState} from "react";
+import { useNavigate } from "react-router-dom";
 import axios from "axios";
-import "../../src/assets/css/login-register.css"
 import FooterComponent from './FooterComponent'
 import Swal from "sweetalert2";
 import Navbar from "./Navbar"
+import "../../src/assets/css/login-register.css"
 
 
 
@@ -12,11 +13,11 @@ function RegisterComponent() {
   const url = "https://localhost:7139";
 
 
-  //Prop for api start
   const [fullname, setFullname] = useState();
   const [username, setUsername] = useState();
   const [mail, setMail] = useState();
   const [password, setPassword] = useState();
+  const navigate = useNavigate();
 
   async function register(e) {
     e.preventDefault();
@@ -39,6 +40,7 @@ function RegisterComponent() {
           showConfirmButton: false,
           timer: 1500,
         });
+        navigate("/login");
         console.log(response);
       })
       .catch(function (error) { });
@@ -47,67 +49,46 @@ function RegisterComponent() {
     <>
       <Navbar />
       <section
-        id="register-area"
-        style={{
-          backgroundImage: "url(/images/Register-image.jpg)",
-        }}
-      >
-        <div className="container">
-          <div className="row">
-            <div className="col-lg-12  col-sm-12">
-              <div className="main">
-                <div className="box">
-                  <div className="form">
-                    <h2>Register</h2>
-                    <form onSubmit={(e) => register(e)}>
-                      <div className="inputBox">
-                        <input
-                          type="text"
-                          required="required"
-                          onChange={(e) => setFullname(e.target.value)}
-                        />
-                        <p>Fullname *</p>
-                        <i />
-                      </div>
-                      <div className="inputBox">
-                        <input
-                          type="text"
-                          required="required"
-                          onChange={(e) => setUsername(e.target.value)}
-                        />
-                        <p>Username *</p>
-                        <i />
-                      </div>
-                      <div className="inputBox">
-                        <input
-                          type="text"
-                          required="required"
-                          onChange={(e) => setMail(e.target.value)}
-                        />
-                        <p>Email *</p>
-                        <i />
-                      </div>
-                      <div className="inputBox">
-                        <input
-                          type="password"
-                          required="required"
+  id="login-register"
+  style={{
+    backgroundImage:
+      "url(./assets/images/login-register/output-onlinejpgtools (2).jpg)"
+  }}
+>
+  <div className="container">
+    <div className="row">
+      <div className="col-12">
+        <div className="login-register">
+          <div className="user register">
+            <div className="login-form">
+              <form onSubmit={(e) => register(e)}>
+                <h2>Sign Up</h2>
+                <input onChange={(e) => setFullname(e.target.value)} type="text" placeholder="Fullname" />
+                <input onChange={(e) => setUsername(e.target.value)} type="text" placeholder="Username" />
+                <input onChange={(e) => setMail(e.target.value)} type="text" placeholder="Email Address" />
+                <input 
                           id="passwordId"
-                          onChange={(e) => setPassword(e.target.value)}
-                        />
-                        <p>Password *</p>
-                        <i />
-                      </div>
-
-
-                      <input type="submit" defaultValue="Sign up" style={{ marginTop: "27px" }} />
-                    </form>
-                  </div>
-                </div>
-              </div>
+                          onChange={(e) => setPassword(e.target.value)} type="password" placeholder="Password" />
+                <input type="submit" defaultValue="Register" />
+                <p className="sign-up">
+                  Already have an account?<a href="login">Sign In</a>
+                </p>
+              </form>
+            </div>
+            <div className="login-img">
+              <img
+                style={{ width: 390, height: 500 }}
+                src="/images/login-register/register.jpg"
+                alt=""
+              />
             </div>
           </div>
         </div>
-      </section>
+      </div>
+    </div>
+  </div>
+</section>
+
       <FooterComponent />
     </>
   );

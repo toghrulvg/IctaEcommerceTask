@@ -16,7 +16,7 @@ namespace IctaTask.Controllers
 
         
         [HttpPost]
-        [Authorize(Roles ="Member")]
+        [Authorize]
         public async Task<IActionResult> AddBasket([Required][FromQuery] int id)
         {
           

@@ -9,20 +9,20 @@ function Category() {
     <div className="row">
       <div className="col-lg-4 col-md-12 col-sm-12">
         <div className="categories">
-          <img src="/images/home/bg-1.jpg.webp" alt="" />
-          <a href="">MEN</a>
+          <img src="/images/home/bg-2.jpg.webp" alt="" />
+          <a >MEN</a>
         </div>
       </div>
       <div className="col-lg-4 col-md-12 col-sm-12">
         <div className="categories">
           <img src="/images/home/bg-3.jpg.webp" alt="" />
-          <a href="">WOMEN</a>
+          <a >WOMEN</a>
         </div>
       </div>
       <div className="col-lg-4 col-md-12 col-sm-12">
         <div className="categories">
           <img src="/images/home/bg-4.jpg.webp" alt="" />
-          <a href="">ACCESSORIES</a>
+          <a >ACCESSORIES</a>
         </div>
       </div>
     </div>
